@@ -1,9 +1,16 @@
+dist: xenial
+
 language: node_js
+
 node_js:
     - node
 
-script:
+install:
     - npm install
-    - npm run ganacle &
+
+before_script:
+    - npm run ganache &
+
+script:
     - npm run lint
     - npm test
