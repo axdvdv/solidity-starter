@@ -1,0 +1,52 @@
+{
+  "name": "solidity-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "npx truffle compile",
+    "ganache": "npx ganache-cli -p 8545",
+    "test": "npx truffle test",
+    "lint": "npx solhint 'contracts/**/*.sol'",
+    "docs": "npx solidity-docgen",
+    "coverage": "node --max-old-space-size=4096 ./node_modules/.bin/truffle run coverage",
+    "gas-report": "GAS_REPORT=true npx truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davy42/solidity-starter.git"
+  },
+  "author": "davy42",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davy42/solidity-starter/issues"
+  },
+  "homepage": "https://github.com/davy42/solidity-starter#readme",
+  "devDependencies": {
+    "@codechecks/client": "^0.1.10",
+    "@openzeppelin/test-helpers": "^0.5.5",
+    "chai": "^4.2.0",
+    "chai-bn": "^0.2.1",
+    "coveralls": "^3.1.0",
+    "eth-gas-reporter": "^0.2.17",
+    "husky": "^4.2.5",
+    "solhint": "^3.0.0",
+    "solidity-docgen": "^0.5.3",
+    "solidity-coverage": "^0.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "truffle compile",
+      "pre-push": "npm run lint"
+    }
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.0.35",
+    "dotenv": "^8.2.0",
+    "ganache-cli": "^6.9.1",
+    "truffle": "^5.1.26"
+  }
+}
