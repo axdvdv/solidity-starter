@@ -1,0 +1,15 @@
+node_modules
+build
+.env
+.DS_Store
+docs
+package-lock.jsons
+
+# Coverage directories and files
+coverage
+coverage.json
+coverageEnv
+coverage-contracts
+coverage-artifacts
+
+
