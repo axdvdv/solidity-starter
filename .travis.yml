@@ -1,17 +1,22 @@
 dist: xenial
 
+os:
+    - linux
+
 language: node_js
 
 node_js:
-    - node
+    - 10
 
 install:
     - npm install
+    - npm install -g ganache-cli
 
 before_script:
+    - npm run lint
+    - npm run compile
     - npm run ganache &
 
 script:
-    - npm run lint
     - npm test
     - cat coverage/lcov.info | coveralls
